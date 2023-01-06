@@ -29,7 +29,7 @@ void UMenu::MenuSetup(int32 NumberOfPublicConnections, FString TypeOfMatch, FStr
 	InputModeData.SetWidgetToFocus(TakeWidget());
 	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 	PlayerController->SetInputMode(InputModeData);
-	PlayerController->bShowMouseCursor = ShowMouseCursor;
+	PlayerController->SetShowMouseCursor(true);
 
 	const auto GameInstance = GetGameInstance();
 	if (!GameInstance)
@@ -172,5 +172,5 @@ void UMenu::MenuTearDown()
 
 	const FInputModeGameOnly InputModeData;
 	PlayerController->SetInputMode(InputModeData);
-	PlayerController->bShowMouseCursor = false;
+	PlayerController->SetShowMouseCursor(false);
 }
