@@ -52,6 +52,7 @@ private:
 	void MenuTearDown();
 
 	// The subsystem designed to handle all online session functionality
+	UPROPERTY()
 	class UMultiplayerSessionsSubsystem* MultiplayerSessionsSubsystem;
 
 	int32 NumPublicConnections{4};
