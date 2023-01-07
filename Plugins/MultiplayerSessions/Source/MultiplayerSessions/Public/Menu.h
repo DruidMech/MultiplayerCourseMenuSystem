@@ -21,7 +21,7 @@ public:
 protected:
 
 	virtual bool Initialize() override;
-	virtual void OnLevelRemovedFromWorld(ULevel* InLevel, UWorld* InWorld) override;
+	virtual void NativeDestruct() override;
 
 	//
 	// Callbacks for the custom delegates on the MultiplayerSessionsSubsystem
@@ -52,6 +52,7 @@ private:
 	void MenuTearDown();
 
 	// The subsystem designed to handle all online session functionality
+	UPROPERTY()
 	class UMultiplayerSessionsSubsystem* MultiplayerSessionsSubsystem;
 
 	int32 NumPublicConnections{4};
